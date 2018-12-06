@@ -18,8 +18,7 @@ def bifurcation_points(r_num,j_num):
     for r in range(r_num):
         for j in range(j_num-1):
             log_map[r][j+1] = (3+r/r_num)*log_map[r][j]*(1-log_map[r][j])
-        print(len(set(np.round(log_map[r][j+1],8))))
-        num_fixed.append(len(set(np.round(log_map[r][j+1],8))))
+        num_fixed.append(len(set(np.round(log_map[r][100000:],8))))
     print(num_fixed)
     
-bifurcation_points(1000,2000)
+bifurcation_points(1000,200000)
